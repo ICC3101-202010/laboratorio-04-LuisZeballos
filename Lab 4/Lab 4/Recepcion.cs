@@ -9,11 +9,13 @@ namespace Lab_4
     public class Recepcion : Maquinas, IWork
     {
         private int Memory;
-        public Recepcion()
+        private int a;
+        public string TipoTrabajo { set; get; }
+        public Recepcion(int a, string trabajo)
         {
-            Random random = new Random();
-            int a = random.Next(10, 50);
+            this.a = a;
             this.Memory = a;
+            this.TipoTrabajo = trabajo;
         }
         public override void Encendido()
         {
@@ -21,7 +23,7 @@ namespace Lab_4
         }
         public override void Reinicio()
         {
-            this.Memory += 20;
+            this.Memory += a;
         }
         public override void Apagado()
         {

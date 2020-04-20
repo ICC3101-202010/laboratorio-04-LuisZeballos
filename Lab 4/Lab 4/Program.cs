@@ -15,7 +15,6 @@ namespace Lab_4
             Console.WriteLine("Numero de piezas a trabajar hoy: " + a);
 
             ComputadoraCentral computadora = new ComputadoraCentral();
-            computadora.GetMemories();
 
             computadora.Inicio();
 

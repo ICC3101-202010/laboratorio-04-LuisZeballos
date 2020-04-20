@@ -9,12 +9,14 @@ namespace Lab_4
     public class Ensamblaje : Maquinas, IWork
     {
         private int Memory;
+        private int a;
+        public string TipoTrabajo { set; get; }
 
-        public Ensamblaje()
+        public Ensamblaje(int a, string trabajo)
         {
-            Random random = new Random();
-            int a = random.Next(10, 50);
+            this.a = a;
             this.Memory = a;
+            this.TipoTrabajo = trabajo;
         }
         public override void Encendido()
         {
@@ -22,8 +24,6 @@ namespace Lab_4
         }
         public override void Reinicio()
         {
-            Random random = new Random();
-            int a = random.Next(10, 50);
             this.Memory += a;
         }
         public override void Apagado()

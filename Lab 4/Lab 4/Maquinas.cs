@@ -11,5 +11,8 @@ namespace Lab_4
         abstract public void Encendido();
         abstract public void Reinicio();
         abstract public void Apagado();
+
+
     }
+
 }

@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminManual.cs" />
+    <Compile Include="Aleatorios.cs" />
     <Compile Include="Almacenamiento.cs" />
     <Compile Include="ComputadoraCentral.cs" />
     <Compile Include="Empaque.cs" />

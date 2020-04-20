@@ -8,12 +8,12 @@ namespace Lab_4
 {
     public class ComputadoraCentral
     {
-
-        Recepcion recepcion = new Recepcion(20,"recepcion");
-        Almacenamiento almacenamiento = new Almacenamiento(15,"almacenamiento");
-        Ensamblaje ensamblaje = new Ensamblaje(30,"ensambalje");
-        Verificacion verificacion = new Verificacion(25,"verificacion");
-        Empaque empaque = new Empaque(40,"empaque");
+        AdminManual admin = new AdminManual();
+        Recepcion recepcion = new Recepcion(20, "recepcion");
+        Almacenamiento almacenamiento = new Almacenamiento(15, "almacenamiento");
+        Ensamblaje ensamblaje = new Ensamblaje(30, "ensambalje");
+        Verificacion verificacion = new Verificacion(25, "verificacion");
+        Empaque empaque = new Empaque(40, "empaque");
 
         List<Maquinas> listi = new List<Maquinas>();
         List<Maquinas> listc = new List<Maquinas>();
@@ -43,28 +43,119 @@ namespace Lab_4
                 empaque.work();
                 if (recepcion.GetMemory() == 0)
                 {
-                    recepcion.Reinicio();
-                    Console.WriteLine("La maquina de recepción se reinicio");
+                    if (admin.SeleccionarMaquina("Recepción") == "si")
+                    {
+                        recepcion.Reinicio();
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("No se puede continuar sin reiniciar, ¿Seguro que desea terminar el proceso antes de tiempo?si/no");
+                        string a =Console.ReadLine();
+                        if(a == "no")
+                        {
+                            recepcion.Reinicio();
+                            Console.WriteLine("Maquina de Recepcion reiniciada");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Se termino el proceso antes de tiempo, se perdieron " + piezas + " piezas");
+                            break;
+                        }
+                    }
+
                 }
                 if (almacenamiento.GetMemory() == 0)
                 {
-                    almacenamiento.Reinicio();
-                    Console.WriteLine("La maquina de almacenamiento se reinicio");
+                    if (admin.SeleccionarMaquina("Almacenamiento") == "si")
+                    {
+                        almacenamiento.Reinicio();
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("No se puede continuar sin reiniciar, ¿Seguro que desea terminar el proceso antes de tiempo?si/no");
+                        string a = Console.ReadLine();
+                        if (a == "no")
+                        {
+                            almacenamiento.Reinicio();
+                            Console.WriteLine("Maquina de Almacenamiento reiniciada");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Se termino el proceso antes de tiempo, se perdieron " + piezas + " piezas");
+                            break;
+                        }
+                    }
                 }
                 if (ensamblaje.GetMemory() == 0)
                 {
-                    ensamblaje.Reinicio();
-                    Console.WriteLine("La maquina de ensamblaje se reinicio");
+                    if (admin.SeleccionarMaquina("Ensamblaje") == "si")
+                    {
+                        ensamblaje.Reinicio();
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("No se puede continuar sin reiniciar, ¿Seguro que desea terminar el proceso antes de tiempo?si/no");
+                        string a = Console.ReadLine();
+                        if (a == "no")
+                        {
+                            ensamblaje.Reinicio();
+                            Console.WriteLine("Maquina de Ensamblaje reiniciada");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Se termino el proceso antes de tiempo, se perdieron " + piezas + " piezas");
+                            break;
+                        }
+                    }
                 }
                 if (verificacion.GetMemory() == 0)
                 {
-                    verificacion.Reinicio();
-                    Console.WriteLine("La maquina de verificación se reinicio");
+                    if (admin.SeleccionarMaquina("Verificación") == "si")
+                    {
+                        verificacion.Reinicio();
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("No se puede continuar sin reiniciar, ¿Seguro que desea terminar el proceso antes de tiempo?si/no");
+                        string a = Console.ReadLine();
+                        if (a == "no")
+                        {
+                            verificacion.Reinicio();
+                            Console.WriteLine("Maquina de Verificación reiniciada");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Se termino el proceso antes de tiempo, se perdieron " + piezas + " piezas");
+                            break;
+                        }
+                    }
                 }
                 if (empaque.GetMemory() == 0)
                 {
-                    empaque.Reinicio();
-                    Console.WriteLine("La maquina de empaque se reinicio");
+                    if (admin.SeleccionarMaquina("Empaque") == "si")
+                    {
+                        empaque.Reinicio();
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("No se puede continuar sin reiniciar, ¿Seguro que desea terminar el proceso antes de tiempo?si/no");
+                        string a = Console.ReadLine();
+                        if (a == "no")
+                        {
+                            empaque.Reinicio();
+                            Console.WriteLine("Maquina de Empaque reiniciada");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Se termino el proceso antes de tiempo, se perdieron " + piezas + " piezas");
+                            break;
+                        }
+                    }
                 }
                 piezas -= 1;
 

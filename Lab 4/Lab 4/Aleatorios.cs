@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_4
 {
-    interface IWork
+    class Aleatorios
     {
-        string TipoTrabajo {set; get;}
-        void work();
     }
 }
